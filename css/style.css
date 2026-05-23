@@ -418,7 +418,7 @@ footer {
 
 /* ── ABOUT PAGE ── */
 .page-hero {
-  height: 50vh;
+  height: 30vh;
   min-height: 380px;
   background: linear-gradient(135deg, var(--ocean-dark) 0%, var(--ocean) 100%);
   display: flex;
