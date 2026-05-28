@@ -171,7 +171,7 @@ nav.scrolled { box-shadow: 0 4px 30px rgba(0,0,0,0.08); }
   animation: fadeUp 1s ease 0.3s both;
 }
 .hero-logo {
-  width: 220px;
+  width: 320px;
   margin: 0 auto 2rem;
   filter: drop-shadow(0 2px 12px rgba(0,0,0,0.3));
 }
