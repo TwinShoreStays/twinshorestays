@@ -75,16 +75,25 @@ if (analysisForm) {
 // Contact form
 const contactForm = document.getElementById('contactForm');
 if (contactForm) {
-  contactForm.addEventListener('submit', (e) => {
+  contactForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
     contactForm.style.opacity = '0.5';
     contactForm.style.pointerEvents = 'none';
-  });
-}
 
-// Show success message if redirected back
-if (window.location.search.includes('success=true')) {
-  const form = document.getElementById('contactForm');
-  const success = document.getElementById('contactSuccess');
-  if (form) form.style.display = 'none';
-  if (success) success.style.display = 'block';
+    const formData = new FormData(contactForm);
+    const response = await fetch('https://formspree.io/f/mqejjwer', {
+      method: 'POST',
+      body: formData,
+      headers: { 'Accept': 'application/json' }
+    });
+
+    if (response.ok) {
+      contactForm.style.display = 'none';
+      document.getElementById('contactSuccess').style.display = 'block';
+    } else {
+      contactForm.style.opacity = '1';
+      contactForm.style.pointerEvents = 'auto';
+      alert('Something went wrong. Please try again.');
+    }
+  });
 }
