@@ -76,12 +76,7 @@ if (analysisForm) {
 const contactForm = document.getElementById('contactForm');
 if (contactForm) {
   contactForm.addEventListener('submit', (e) => {
-    e.preventDefault();
     contactForm.style.opacity = '0.5';
     contactForm.style.pointerEvents = 'none';
-    setTimeout(() => {
-      contactForm.style.display = 'none';
-      document.getElementById('contactSuccess').style.display = 'block';
-    }, 800);
   });
 }
