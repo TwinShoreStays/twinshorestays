@@ -80,3 +80,11 @@ if (contactForm) {
     contactForm.style.pointerEvents = 'none';
   });
 }
+
+// Show success message if redirected back
+if (window.location.search.includes('success=true')) {
+  const form = document.getElementById('contactForm');
+  const success = document.getElementById('contactSuccess');
+  if (form) form.style.display = 'none';
+  if (success) success.style.display = 'block';
+}
